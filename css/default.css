@@ -1,0 +1,306 @@
+.clearfix:before,.clearfix:after{content:'\0020';display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both}
+.clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+
+/* If a pop-up has no content, then it's width and height must be specified */
+body {
+    overflow: hidden;
+    font: normal 12px Helvetica, Arial, sans-serif;
+    text-shadow: 0 -1px 0 #fff;
+    background-color: rgb(4,5,5);
+    /* use this to keep all text from being selectable to maintain a more app-like experience
+    otherwise it's possible to highlight/select an entire pokki window  */
+    -webkit-user-select: none;
+}
+
+
+/*   paintery
+*/
+#appHolder{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#tools{
+    top: 0;
+    left: 0;
+
+    width: 89px;
+    height: 100%;
+    background-image: url("../img/toolsAll.png");
+    background-repeat: no-repeat;
+    background-color: #dfdfdf;
+    position: absolute;
+}
+
+#colors{
+    top:361px;
+    left:88px;
+
+    width:512px;
+    height:40px;
+    background-image: url("../img/colorsAll.png");
+    background-repeat: no-repeat;
+
+    position: absolute;
+}
+#bigColor{
+    left:132px;
+    top:367px;
+
+    width:26px;
+    height:27px;
+    background-image: url("../img/bigcolor.png");
+    background-repeat: no-repeat;
+
+    background-color: #000000;
+    
+
+    position: absolute;
+}
+
+.toolButtons.selected{
+    background-image: url("../img/buttonSelected.png");
+}
+
+.toolButtons.over{
+    background-image: url("../img/buttonOver.png");
+}
+
+.toolButtons{
+    width: 44px;
+    height: 44px;
+    background-image: url("../img/buttonNormal.png");
+
+    cursor: pointer;
+
+    position: absolute;
+}
+#eraser{
+    top:0;
+    left:0;
+}
+#fill{
+    top:0;
+    left:44px;
+}
+/*
+#typing{
+    top:44px;
+    left:0;
+}
+*/
+#spray{
+    top:44px;
+    left:44px;
+}
+#pencil{
+    top:88px;
+    left:0;
+}
+#brush{
+    top:88px;
+    left:44px;
+}
+/*
+#dropper{
+    top:132px;
+    left:0;
+}
+#zoom{
+    top:132px;
+    left:44px;
+}
+*/
+#circle{
+    top:132px;
+    left:0;
+}
+#rectangle{
+    top:132px;
+    left:44px;
+}
+#line{
+    top:44px;
+    left:0;
+}
+#undo{
+    top:264px;
+    left:0;
+}
+#newFile{
+    top:308px;
+    left:0;
+}
+#uploadFile{
+    top:308px;
+    left:44px;
+}
+#loadFile{
+    top:352px;
+    left:0;
+}
+#saveFile{
+    top:308px;
+    left:44px;
+}
+
+#paintArea{
+    left: 88px;
+    top: 0;
+
+    width: 512px;
+    height: 400px;
+    background-color: #ffffff;
+
+    position: absolute;
+}
+#paintCanvas{
+    left:0;
+    background-color: #ffffff;
+
+}
+
+.dialog{
+    left: 90px;
+    bottom: 36px;
+
+    width: 448px;
+    height: 361px;
+
+    position: absolute;
+}
+#saveDialog{
+    background: url("../img/saveBackground.png");
+
+    visibility: hidden;
+}
+#saveTextArea{
+    left: 45px;
+    width: 340px;
+    bottom: 20px;
+    overflow: hidden;
+    resize: none;
+    position: absolute;
+}
+
+
+#loadDialog{
+    visibility: hidden;
+}
+#uploadDialog{
+    visibility: hidden;
+}
+
+.colorPalette{
+    bottom:20px;
+    left:200px;
+    width: 19px;
+    height: 17px;
+    background-image: url("../img/paletteNormal.png");
+    background-color: #00ff00;
+
+    cursor:pointer;
+
+    position: absolute;
+}
+.colorPalette.over{
+    background-image: url("../img/paletteOver.png");
+}
+
+#pink{
+    left:179px;
+    bottom:2px;
+    background-color: #f060cd;
+}
+#blue{
+    left:179px;
+    background-color: #4c81ee;
+}
+#red{
+    left:202px;
+    bottom:2px;
+    background-color: #ee4c55;
+}
+#yellow{
+    left:202px;
+    background-color: #f4ec45;
+}
+#green{
+    left:225px;
+    background-color: #53f052;
+    bottom:2px;
+}
+#orange{
+    left:225px;
+    background-color: #ffbf3b;
+}
+#black{
+    left:248px;
+    background-color: #000000;
+    bottom:2px;
+}
+#white{
+    left:248px;
+    background-color: #ffffff;
+}
+
+#lightGray{
+    left: 271px;
+    background-color: #bbbbbb;
+}
+#darkGray{
+    left: 271px;
+    bottom: 2px;
+    background-color: #6a6a6a;
+}
+#purp{
+    left:294px;
+    background-color: #be4acc;
+}
+#brown{
+    left:294px;
+    bottom: 2px;
+    background-color: #b68247;
+}
+#darkblue{
+    left:317px;
+    bottom:2px;
+    background-color: #444488;
+}
+#darkgreen{
+    left:317px;
+    background-color: #448844;
+}
+
+/* Used to contain the contents of a Pokki when testing in a web browser using PokkiBrowser.js */
+#wrapper {
+    margin: auto;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    opacity: 1;
+}
+#wrapper.show { 
+    opacity: 1;
+}
+
+/* Minimize Pokki button */
+a#minimize {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 21px;
+    height: 12px;
+    cursor: pointer;
+    background: #555 url(../img/minimize.png) 0px -2px no-repeat;
+    border-bottom-left-radius: 3px;
+    -webkit-transition: background-color 0.3s linear;
+}
+a#minimize:hover {
+    background-color: #383d43;
+}
+a#minimize:active {
+    background-position: 0px -1px;
+}
