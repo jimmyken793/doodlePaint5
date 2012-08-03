@@ -23,6 +23,8 @@ var BrushTool = new Class({
 
     toolMove: function(_x,_y,_context, _color){
         _context.beginPath();
+
+        // Draw 20 times to get rid of the antialiasing for a more pixely look
         for(var i=0;i<20;i++){
             _context.moveTo(this.options.downX, this.options.downY);
             this.pencilDraw(_x,_y,_context, _color);

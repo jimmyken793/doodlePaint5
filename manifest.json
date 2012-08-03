@@ -1,10 +1,11 @@
 {
    "name": "Doodle Paint5",
-   "version": "1.1",
-   "icon-19x19": "img/icon-19x19.png",
-   "icon-29x29": "img/icon-29x29.png",
-   "icon-42x42": "img/icon-42x42.png",
-   "icon-256x256": "img/icon-256x256.png",
+   "version": "2.0",
+   "icons": { "19":	 "img/icon-19x19.png", 
+              "29":	 "img/icon-29x29.png",
+              "42":	 "img/icon-42x42.png",
+              "256": "img/icon-256x256.png" },
    "description": "Painting program for Pokki!",
-   "popup": "popup.html"
+   "window": "window.html",
+   "background": "background.html"
 }

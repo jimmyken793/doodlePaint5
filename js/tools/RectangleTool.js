@@ -38,6 +38,8 @@ var RectangleTool = new Class({
         _context.strokeStyle = _color;
         _context.lineWidth = 2.0;
         _context.fillStyle = "#ff00ff";
+        
+        // Draw 10 times to get rid of the antialiasing for a more pixely look
         for(var i=0;i<10;i++){
            _context.strokeRect(this.options.startX, this.options.startY, _x-this.options.startX, _y-this.options.startY);
         }

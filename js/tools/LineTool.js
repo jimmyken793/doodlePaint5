@@ -45,6 +45,8 @@ var LineTool = new Class({
     },
 
     toolUp: function(_x,_y,_context,_color){
+        // Draw 15 times to get rid of antialiasing for a more pixely look
+        // (and easier Fill)
         for(var i=0;i<15;i++){
             this.drawLine(_x,_y,_context,_color);
         }

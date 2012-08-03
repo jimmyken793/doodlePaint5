@@ -1,3 +1,10 @@
+/*
+    Wrapper for the Pokki Popup
+
+
+
+ */
+
 // Global variable for our core app
 var Paint = false;
 

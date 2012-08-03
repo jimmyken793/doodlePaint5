@@ -4,6 +4,7 @@
 /* If a pop-up has no content, then it's width and height must be specified */
 body {
     overflow: hidden;
+	height: 400px;
     font: normal 12px Helvetica, Arial, sans-serif;
     text-shadow: 0 -1px 0 #fff;
     background-color: rgb(4,5,5);

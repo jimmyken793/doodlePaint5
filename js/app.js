@@ -19,11 +19,7 @@ var App = function() {
     var typingTool = new TypingTool();
     var zoomTool = new ZoomTool();
 
-    /*
-    var minimize = document.getElementById('minimize');
-    minimize.addEventListener('click', pokki.closePopup);
-    */
-
+    var saveState;
 
     var undoArray=[];
 
@@ -69,7 +65,6 @@ var App = function() {
 
 
             case "newFile":
-//                currentTool = null;
                 canvasContext.fillStyle="#FFFFFF";
                 canvasContext.fillRect(0,0,512,400);
                 $$('.toolButtons').removeClass('selected');
@@ -93,7 +88,6 @@ var App = function() {
             break;
 
             case "undo":
-//                currentTool = null;
                 var imgData = undoArray.shift();
                 console.log(imgData, undoArray)
                 if(imgData) canvasContext.putImageData(imgData, 0,0, 0,0, 512,360);
@@ -106,8 +100,6 @@ var App = function() {
 
 
     this.onCreated = function(){
-
-
 
         $$('.toolButtons').addEvent('click', function(e){
             $$('.toolButtons').removeClass('selected');
@@ -141,7 +133,6 @@ var App = function() {
 
 
         canvasContext = $('paintCanvas').getContext('2d');
-//        canvasContext.translate(0.5,0.5);
 
         canvasContext.fillStyle = "#FFFFFF";
         canvasContext.fillRect(0,0,512,400);
@@ -159,6 +150,7 @@ var App = function() {
 
             if(currentTool) currentTool.toolDown(e.event.layerX, e.event.layerY, canvasContext, currentColor);
         });
+        
         $('paintCanvas').addEvent('mouseup', function(e){
             if(currentTool && mouseDown){
                 if(canvasImageData) canvasContext.putImageData(canvasImageData, 0,0, 0,0, 512,360);
@@ -167,7 +159,8 @@ var App = function() {
             }
             mouseDown = false;
         });
-         $('paintCanvas').addEvent('mousemove', function(e){
+
+        $('paintCanvas').addEvent('mousemove', function(e){
             if(!mouseDown) return;
             if(currentTool){
                 if(!currentTool.getConstantDrawing()){
@@ -184,8 +177,8 @@ var App = function() {
         $('paintCanvas').addEvent('mouseout', function(e){
             // same as on up!
             if(mouseDown){
-            if(canvasImageData) canvasContext.putImageData(canvasImageData, 0,0, 0,0, 512,360);
-            canvasImageData = null;
+                if(canvasImageData) canvasContext.putImageData(canvasImageData, 0,0, 0,0, 512,360);
+                canvasImageData = null;
             }
             mouseDown = false;
             
@@ -198,12 +191,12 @@ var App = function() {
 
     this.onPopupShowing = function() {
 
-        /*
-        if(saveState) canvasContext.putImageData(saveState, 0,0, 0,0, 512,360);
-        saveState = null;
-        */
     };
-    
+
+    /*
+        Restores the image data from localStorage to the canvas
+        when the app is opened again
+     */
     this.onPopupShown = function() {
         var wrapper = document.getElementById('wrapper');
 
@@ -225,19 +218,19 @@ var App = function() {
     };
 
 
+    /*
+        Saves the image data to localStorage when the window is hidden
+     */
     this.onPopupHidden = function() {
-            console.log('save state!')
+        console.log('save state!')
 
         localStorage.clear();
         localStorage.removeItem('savedTempImagedata');
         localStorage.setItem('savedTempImagedata', $('paintCanvas').toDataURL());
     };
 
-    var saveState;
-
     this.onPopupUnload = function() {
 
-//        saveState = canvasContext.getImageData(0,0,512,360);
     };
 
 
