@@ -3,10 +3,10 @@ Doodle Paint5 is a simple HTML5 painting program that uses the Canvas element an
 It runs on the Pokki appstore (http://pokki.com)
 
 <h1>Important source files</h1>
-app.js - Main js entrypoint for Doodle Paint
-popup.js - Pokki popup wrapper
-window.html - HTML entrypoint for Doodle Paint
-default.css - All Doodle Paint CSS
-
-ToolBase.js - Abstract base class for painting Tools
-*****Tool.js - Painting tool implementations, pencil, brush, circle, spray, etc.
+app.js - Main js entrypoint for Doodle Paint<br>
+popup.js - Pokki popup wrapper<br>
+window.html - HTML entrypoint for Doodle Paint<br>
+default.css - All Doodle Paint CSS<br>
+<br>
+ToolBase.js - Abstract base class for painting Tools<br>
+*****Tool.js - Painting tool implementations, pencil, brush, circle, spray, etc.<br>
